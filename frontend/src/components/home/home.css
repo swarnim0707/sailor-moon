@@ -1,0 +1,103 @@
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  background-image: url('/src/assets/sailor-moon-wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Menu button */
+.menu-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(94, 111, 241);
+  padding: 0.5rem;
+  z-index: 2;
+}
+
+.menu-list {
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  list-style: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5px);
+  min-width: 150px;
+  z-index: 1;
+}
+
+/* Moon logo */
+.moonLogo {
+  width: 120px;
+  height: 120px;
+  max-width: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: moonLogo-spin infinite 10s linear;
+  filter: drop-shadow(0 0 1rem rgba(148, 187, 233, 0.5));
+  margin-top: 8vh; /* Slightly below the top */
+}
+
+/* Centered greeting */
+.greeting-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+  width: 80%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .menu-button {
+    font-size: 1.2rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .menu-list {
+    top: 2.5rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+
+  .moonLogo {
+    width: 100px;
+    height: 100px;
+    margin-top: 6vh;
+  }
+  
+  .greeting-text {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+}
+
+@keyframes moonLogo-spin {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}

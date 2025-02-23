@@ -1,0 +1,10 @@
+{
+  "New Moon": false,
+  "Waxing Crescent": true,
+  "First Quarter": false,
+  "Waxing Gibbous": false,
+  "Full Moon": true,
+  "Waning Gibbous": false,
+  "Last Quarter": false,
+  "Waning Crescent": true
+}

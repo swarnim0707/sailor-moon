@@ -1,0 +1,226 @@
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  background-image: url('/src/assets/sailor-moon-wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Menu button */
+.menu-button {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(94, 111, 241);
+  padding: 0.3rem;
+  z-index: 3;
+}
+
+.menu-list {
+  position: absolute;
+  top: 2.8rem;
+  left: 0.8rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFFACD;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5px);
+  min-width: 120px;
+  z-index: 3;
+  font-size: 0.8rem;
+}
+
+/* Center align the list */
+.phase-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  list-style: none;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  backdrop-filter: blur(8px);
+  min-width: 90%;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  animation: waveAnimation 3s infinite ease-in-out;
+  min-height: 200px;
+  justify-content: center;
+}
+
+/* Glittering text effect */
+.phase-list li {
+  display: block;
+  padding: 0.3rem 0;
+  color: #FFFACD;
+  animation: glitterEffect 1.5s infinite alternate;
+  font-size: 0.9rem;
+}
+
+.phase-list h4 {
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.3rem;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+/* Moon logo - Home Page */
+.moonLogoHome {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: moonLogoHome-spin infinite 10s linear;
+  filter: drop-shadow(0 0 1rem rgba(148, 187, 233, 0.5));
+  margin-top: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 2s ease-in-out;
+}
+
+/* Moon logo - Favourites Page */
+.moonLogoTopRight {
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: glitterEffect 1.5s infinite alternate;
+  filter: drop-shadow(0 0 1rem rgba(148, 187, 233, 0.5));
+}
+
+/* Greeting text */
+.greeting-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+  width: 90%;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #FFFACD;
+  color: #FFFACD;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background: #FFFACD;
+  color: black;
+}
+
+/* Edit button positioning */
+.edit-button {
+  margin-top: 3.5rem;
+  display: block;
+}
+
+/* Edit mode styles */
+.static-flex {
+  animation: none !important;
+}
+
+.selected-phase {
+  color: #FFFACD;
+  text-shadow: 0 0 10px #FFFACD;
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.unselected-phase {
+  color: gray;
+  cursor: pointer;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.75rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .menu-button {
+      font-size: 0.9rem;
+      top: 0.5rem;
+      left: 0.5rem;
+  }
+
+  .menu-list {
+      top: 2.5rem;
+      font-size: 0.8rem;
+      max-height: 60vh; /* Prevent excessive height */
+      overflow-y: auto; /* Add scroll if needed */
+  }
+
+  .phase-list {
+      width: 95%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      margin-top: 2rem; /* Added spacing */
+      min-height: auto;
+  }
+
+  .moonLogoHome {
+      width: 70px;
+      height: 70px;
+      margin-top: 3vh;
+  }
+
+  .greeting-text {
+      font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes moonLogoHome-spin {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+}
+
+@keyframes waveAnimation {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(10px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+/* Glitter effect animation */
+@keyframes glitterEffect {
+  from { opacity: 0.8; }
+  to { opacity: 1; text-shadow: 0 0 15px rgba(255, 250, 205, 0.8); }
+}
