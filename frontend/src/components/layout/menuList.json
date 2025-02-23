@@ -2,8 +2,7 @@
     "items":
         [
             {"id": 1, "name": "Home", "path": "/"},
-            {"id": 2, "name": "Favourite Phases", "path": "/favourite-phases"},
-            {"id": 3, "name": "Lunar Voyage", "path": "/favourite-phases"}
+            {"id": 2, "name": "Favourite Phases", "path": "/favourite-phases"}
             
         ]
 }
